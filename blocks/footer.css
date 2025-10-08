@@ -1,5 +1,5 @@
 .footer{
-  margin-top: 40px;                 /* space above footer */
+  margin-top: 40px;
   background: transparent;
 }
 
@@ -16,7 +16,9 @@
     display: flex;
     margin: 40px;
     text-align: center;
-    font: 400 16px / 1 "Poppins", system-ui, sans-serif;
+    font: 400;
+    font-size: 16px;
+    line-height: 1;
     color: #212121;
     opacity: 0.7;
 }
