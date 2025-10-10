@@ -13,11 +13,18 @@ gap: 40px 20px ;
 }
 
 @media screen and (max-width: 627px) {
-  .cards_list{
+    .cards{
+    max-width: 288px;
+    margin: 0 auto;
+  }
+
+  .cards__list{
+    display: grid;
   grid-template-columns: repeat(auto-fit, 288px);
   justify-content: center;
   border-radius: 8px;
   border-style: none;
-  gap: 32px 0;
+  gap: 32px;
+  margin: 24px auto 0;
   }
 }

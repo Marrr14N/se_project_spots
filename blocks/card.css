@@ -4,7 +4,7 @@
 
 .card__image{
 height: 413px;
-width: 413px;
+width: 100%;
 object-fit: cover;
 display: block;
 border-radius: 8px;
@@ -52,9 +52,22 @@ width: 23px;
 .profile__edit-btn:hover{ opacity: 1; text-decoration: underline; }
 
 @media screen and (max-width: 627px) {
+
+   .card {
+    width: 288px;
+    max-width: 288px;
+    margin: 0 auto;
+  }
   .card__image{
-  height: 288px;
+  height: 288px ;
+  width: 288px;
+  display: block;
+  object-fit: cover;
   border-radius: 8px;
   border-style: none;
 }
+  .card__title{
+  margin: 12px 0 8px;
+  font: 600 20px/1.2 "Poppins", system-ui, sans-serif;
+  }
 }
