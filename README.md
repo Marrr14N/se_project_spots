@@ -8,6 +8,13 @@ Includes a profile section, editable buttons, and a responsive gallery of image 
 **Technical Implementation**  
 Built with **semantic HTML** and **modular CSS (BEM)** using **Flexbox**, **Grid**, and **media queries** for responsiveness and scalable design.  
 
+**Skills**  
+- Semantic **HTML5** & **CSS3**
+- **Flexbox** & **Grid** for advanced layout control  
+- **Media queries** for mobile-first responsiveness  
+- **BEM** class naming for scalability  
+- **Hover states**, truncation, and adaptive spacing  
+
 **Visual Design & Figma Reference**  
 Developed directly from the **Figma design** for pixel-perfect alignment, color accuracy, and typography.  
 [View Design](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
@@ -18,9 +25,6 @@ Developed directly from the **Figma design** for pixel-perfect alignment, color 
   
 * [Link to the project on GitHub] ([https://marrr14n.github.io/se_project_spots/])
 
-**Skills**  
-- Semantic **HTML5** & **CSS3**
-- **Flexbox** & **Grid** for advanced layout control  
-- **Media queries** for mobile-first responsiveness  
-- **BEM** class naming for scalability  
-- **Hover states**, truncation, and adaptive spacing  
+ ## Project Pitch Video
+ 
+ Check out [this video](https://drive.google.com/file/d/1knwVuEc7VO1yg0zCYqoOmwf3XyfuXC8-/view?usp=sharing), where I describe my project and some challenges I faced while building it.
