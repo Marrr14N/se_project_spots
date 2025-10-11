@@ -11,10 +11,6 @@ border-radius: 8px;
 border-style: none;
  transition: transform .18s ease, box-shadow .18s ease;
 }
-.card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.08);
-}
 
 .card__content{
 display: flex;
