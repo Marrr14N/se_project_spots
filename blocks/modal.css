@@ -13,7 +13,7 @@
 }
 
 .modal_is-opened{
-  visibility:visible;
+visibility:visible;
 }
 
 .modal__container{
@@ -22,7 +22,14 @@ max-width: 730px;
   border-radius: 8px;
   background-color: #fff;
   padding: 32px 50px;
-   position: relative;
+  position: relative;
+    opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .45s ease, transform .45s ease;
+}
+.modal_is-opened .modal__container {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .modal__close-btn{
@@ -34,6 +41,8 @@ max-width: 730px;
   opacity: .4;
   border: none;
   background-color: #ffffff;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .modal__title{
@@ -58,10 +67,10 @@ display: block;
 margin: 8px 0 0;
 width: 100%;
 color: #212121;
-opacity: .4;
+font: 500 20px/1 "Poppins", system-ui, sans-serif;
 padding: 16px 12px;
 border-radius: 8px;
-border-style: solid;
+border: 1px solid rgba(33, 33, 33, 0.4);
 }
 
 .card-image-input{
@@ -86,6 +95,8 @@ opacity: .3;
   font-size: 16px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 @media screen and (max-width: 627px) {
