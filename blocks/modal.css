@@ -35,6 +35,10 @@
 }
 
 .modal__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
   position: absolute;
   top: 32px;
   right: 20px;
