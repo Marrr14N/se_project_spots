@@ -47,11 +47,11 @@ const profileDescriptionEl = document.querySelector(".profile__description");
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
-  editProfileModal.classList.add("modal_is-opened");
+  openModal(editProfileModal);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 });
 
 newPostBtn.addEventListener("click", function () {
@@ -75,21 +75,49 @@ const addCardFormElement = newPostModal.querySelector(".modal__form");
 const linkInput = addCardFormElement.querySelector("#card-image-input");
 const captionInput = addCardFormElement.querySelector("#caption-input");
 
-newPostBtn.addEventListener("click", () => {
-  newPostModal.classList.add("modal_is-opened");
+function openModal(modal) {
+  modal.classList.add("modal_is-opened");
+}
+
+function closeModal(modal) {
+  modal.classList.remove("modal_is-opened");
+}
+
+editProfileBtn.addEventListener("click", function () {
+  editProfileNameInput.value = profileNameEl.textContent;
+  editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+
+  openModal(editProfileModal);
 });
 
-function handleAddCardSubmit(evt) {
+editProfileCloseBtn.addEventListener("click", function () {
+  closeModal(editProfileModal);
+});
+
+editProfileForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+  closeModal(editProfileModal);
+});
+
+newPostBtn.addEventListener("click", function () {
+  openModal(newPostModal);
+});
+
+newPostCloseBtn.addEventListener("click", function () {
+  closeModal(newPostModal);
+});
+
+addCardFormElement.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
   console.log("Image link:", linkInput.value);
   console.log("Caption:", captionInput.value);
 
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
   addCardFormElement.reset();
-}
-
-addCardFormElement.addEventListener("submit", handleAddCardSubmit);
+});
 
 initialCards.forEach(function (item) {
   console.log(item.name);
