@@ -1,7 +1,7 @@
 const initialCards = [
   {
     name: "Golden Gate Bridge",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
   },
   {
     name: "Val Thorens",
@@ -77,13 +77,16 @@ function getCardElement(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardTitleEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
-  const cardDeleteBtnEl = makeDeleteBtn();
 
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
   cardTitleEl.textContent = data.name;
 
-  cardElement.prepend(cardDeleteBtnEl);
+  let cardDeleteBtnEl = cardElement.querySelector(".card__delete-btn");
+  if (!cardDeleteBtnEl) {
+    cardDeleteBtnEl = makeDeleteBtn();
+    cardElement.prepend(cardDeleteBtnEl);
+  }
 
   cardImageEl.addEventListener("click", function () {
     previewCaptionEl.textContent = data.name;
@@ -94,6 +97,12 @@ function getCardElement(data) {
 
   return cardElement;
 }
+
+/* --- RENDER initialCards ON LOAD --- */
+initialCards.forEach(function (cardData) {
+  const el = getCardElement(cardData);
+  cardsList.append(el);
+});
 
 editProfileBtn.addEventListener("click", function () {
   nameInputEl.value = profileNameEl.textContent;
@@ -133,12 +142,6 @@ addCardFormEl.addEventListener("submit", function (evt) {
   closeModal(addCardModal);
 });
 
-document.querySelectorAll(".cards__list > li.card").forEach(function (card) {
-  if (!card.querySelector(".card__delete-btn")) {
-    card.prepend(makeDeleteBtn());
-  }
-});
-
 cardsList.addEventListener("click", function (e) {
   const deleteBtn = e.target.closest(".card__delete-btn");
   if (deleteBtn) {
@@ -151,16 +154,6 @@ cardsList.addEventListener("click", function (e) {
   if (likeBtn) {
     likeBtn.classList.toggle("card__like-btn_active");
     return;
-  }
-
-  const img = e.target.closest(".card__image");
-  if (img && cardsList.contains(img)) {
-    const card = img.closest(".card");
-    const titleEl = card ? card.querySelector(".card__title") : null;
-    previewCaptionEl.textContent = titleEl ? titleEl.textContent : "";
-    previewImageEl.src = img.src;
-    previewImageEl.alt = previewCaptionEl.textContent;
-    openModal(previewModal);
   }
 });
 

@@ -27,7 +27,6 @@
   .footer__container {
     width: calc(100% - 32px);
     padding-bottom: 40px;
-    display: flex;
     justify-content: center;
     box-sizing: border-box;
   }
