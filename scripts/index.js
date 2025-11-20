@@ -123,6 +123,7 @@ editFormEl.addEventListener("submit", function (evt) {
 });
 
 newPostBtn.addEventListener("click", function () {
+  resetValidation(addCardFormEl, settings);
   openModal(addCardModal);
 });
 
