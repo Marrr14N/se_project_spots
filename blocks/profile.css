@@ -131,13 +131,6 @@
     margin: 0;
     width: 100%;
     max-width: 288px;
-    height: 52px;
-    padding: 18px 32px;
-    border-radius: 8px;
-    background: #212121;
-    color: #fcf5e5;
-    border: 0;
-    font: 500 16px/1 "Poppins", system-ui, sans-serif;
   }
   .profile__edit-btn {
     display: inline-flex;

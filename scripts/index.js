@@ -58,12 +58,53 @@ const cardTemplate = document
   .querySelector("#card-template")
   .content.querySelector(".card");
 
+function handleEscape(evt) {
+  if (evt.key !== "Escape") return;
+
+  const openedModal = document.querySelector(".modal_is-opened");
+  if (!openedModal) return;
+
+  if (openedModal === previewModal) {
+    closePreviewModal();
+  } else {
+    closeModal(openedModal);
+  }
+}
+
+function handleOverlayClick(evt) {
+  if (evt.target === evt.currentTarget) {
+    const modal = evt.currentTarget;
+
+    if (modal === previewModal) {
+      closePreviewModal();
+    } else {
+      closeModal(modal);
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+
+  document.addEventListener("keydown", handleEscape);
+  modal.addEventListener("mousedown", handleOverlayClick);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+
+  modal.removeEventListener("mousedown", handleOverlayClick);
+
+  const anotherOpenModal = document.querySelector(".modal_is-opened");
+  if (!anotherOpenModal) {
+    document.removeEventListener("keydown", handleEscape);
+  }
+}
+
+function closePreviewModal() {
+  previewImageEl.src = "";
+  previewCaptionEl.textContent = "";
+  closeModal(previewModal);
 }
 
 function makeDeleteBtn() {
@@ -100,8 +141,8 @@ function getCardElement(data) {
 }
 
 initialCards.forEach(function (cardData) {
-  const el = getCardElement(cardData);
-  cardsList.append(el);
+  const cardEl = getCardElement(cardData);
+  cardsList.append(cardEl);
 });
 
 editProfileBtn.addEventListener("click", function () {
@@ -123,7 +164,6 @@ editFormEl.addEventListener("submit", function (evt) {
 });
 
 newPostBtn.addEventListener("click", function () {
-  resetValidation(addCardFormEl, settings);
   openModal(addCardModal);
 });
 
@@ -166,23 +206,5 @@ cardsList.addEventListener("click", function (e) {
 });
 
 previewModalCloseBtn.addEventListener("click", function () {
-  closeModal(previewModal);
-  previewImageEl.src = "";
-});
-
-previewModal.addEventListener("click", function (e) {
-  if (e.target === previewModal) {
-    closeModal(previewModal);
-    previewImageEl.src = "";
-  }
-});
-
-document.addEventListener("keydown", function (e) {
-  if (
-    e.key === "Escape" &&
-    previewModal.classList.contains("modal_is-opened")
-  ) {
-    closeModal(previewModal);
-    previewImageEl.src = "";
-  }
+  closePreviewModal();
 });
