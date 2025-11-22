@@ -185,9 +185,6 @@ addCardFormEl.addEventListener("submit", function (evt) {
   cardsList.prepend(cardElement);
 
   addCardFormEl.reset();
-  resetValidation(addCardFormEl, settings);
-  disableButton(cardSubmitBtn, settings);
-
   closeModal(addCardModal);
 });
 

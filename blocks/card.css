@@ -83,6 +83,7 @@
 }
 
 .card__delete-btn:hover {
+  background: transparent url(../images/delete-hover.svg);
   opacity: 1;
   transform: scale(1.1);
 }
