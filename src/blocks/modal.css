@@ -77,7 +77,7 @@
 }
 
 .modal__close-btn_type_preview {
-  background: transparent url("/images/close-btn.svg") center no-repeat;
+  background: transparent url("../images/close-btn.svg") center no-repeat;
   top: 0;
   right: -52.5px;
 }

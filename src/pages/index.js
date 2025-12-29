@@ -1,3 +1,10 @@
+import "./index.css";
+import {
+  enableValidation,
+  validationConfig,
+  resetValidation,
+} from "../scripts/validation.js";
+
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -44,7 +51,6 @@ const newPostBtn = document.querySelector(".profile__add-btn");
 const addCardModal = document.querySelector("#new-post-modal");
 const addCardCloseBtn = addCardModal.querySelector(".modal__close-btn");
 const addCardFormEl = addCardModal.querySelector(".modal__form");
-const cardSubmitBtn = addCardModal.querySelector(".modal__submit-btn");
 const captionInputEl = addCardFormEl.querySelector("#caption-input");
 const linkInputEl = addCardFormEl.querySelector("#card-image-input");
 
@@ -130,7 +136,7 @@ function getCardElement(data) {
     cardElement.prepend(cardDeleteBtnEl);
   }
 
-  cardImageEl.addEventListener("click", function () {
+  cardImageEl.addEventListener("click", () => {
     previewCaptionEl.textContent = data.name;
     previewImageEl.src = data.link;
     previewImageEl.alt = data.name;
@@ -140,38 +146,42 @@ function getCardElement(data) {
   return cardElement;
 }
 
-initialCards.forEach(function (cardData) {
+initialCards.forEach((cardData) => {
   const cardEl = getCardElement(cardData);
   cardsList.append(cardEl);
 });
 
-editProfileBtn.addEventListener("click", function () {
+editProfileBtn.addEventListener("click", () => {
   nameInputEl.value = profileNameEl.textContent;
   descriptionInputEl.value = profileDescriptionEl.textContent;
-  resetValidation(editFormEl, settings);
+
+  resetValidation(editFormEl, validationConfig);
+
   openModal(editProfileModal);
 });
 
-editProfileCloseBtn.addEventListener("click", function () {
+editProfileCloseBtn.addEventListener("click", () => {
   closeModal(editProfileModal);
 });
 
-editFormEl.addEventListener("submit", function (evt) {
+editFormEl.addEventListener("submit", (evt) => {
   evt.preventDefault();
   profileNameEl.textContent = nameInputEl.value;
   profileDescriptionEl.textContent = descriptionInputEl.value;
   closeModal(editProfileModal);
 });
 
-newPostBtn.addEventListener("click", function () {
+newPostBtn.addEventListener("click", () => {
+  resetValidation(addCardFormEl, validationConfig);
+  addCardFormEl.reset();
   openModal(addCardModal);
 });
 
-addCardCloseBtn.addEventListener("click", function () {
+addCardCloseBtn.addEventListener("click", () => {
   closeModal(addCardModal);
 });
 
-addCardFormEl.addEventListener("submit", function (evt) {
+addCardFormEl.addEventListener("submit", (evt) => {
   evt.preventDefault();
 
   const inputValues = {
@@ -188,7 +198,7 @@ addCardFormEl.addEventListener("submit", function (evt) {
   closeModal(addCardModal);
 });
 
-cardsList.addEventListener("click", function (e) {
+cardsList.addEventListener("click", (e) => {
   const deleteBtn = e.target.closest(".card__delete-btn");
   if (deleteBtn) {
     const card = deleteBtn.closest(".card");
@@ -202,6 +212,8 @@ cardsList.addEventListener("click", function (e) {
   }
 });
 
-previewModalCloseBtn.addEventListener("click", function () {
+previewModalCloseBtn.addEventListener("click", () => {
   closePreviewModal();
 });
+
+enableValidation(validationConfig);
