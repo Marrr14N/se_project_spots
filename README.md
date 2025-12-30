@@ -6,7 +6,7 @@
 Includes a profile section, editable buttons, and a responsive gallery of image cards with hover states and like icons. The design maintains visual balance and accessibility across all devices.
 
 **Technical Implementation**  
-Built with **semantic HTML** and **modular CSS (BEM)** using **Flexbox**, **Grid**, and **media queries** for responsiveness and scalable design.
+Built with **Semantic HTML** and **Modular CSS (BEM)** using **Flexbox**, **Grid**, and **Media Queries** for responsiveness and scalable design.
 
 **Skills**
 
