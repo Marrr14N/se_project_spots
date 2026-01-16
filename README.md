@@ -30,7 +30,4 @@ Developed directly from the **Figma design** for pixel-perfect alignment, color 
 Check out these videos, where I describe my project
 and some challenges I faced while building it:
 
-- [Building a Responsive Photo Sharing Platform: My Journey with Spots](https://drive.google.com/file/d/1knwVuEc7VO1yg0zCYqoOmwf3XyfuXC8-/view?usp=sharing)
-- [Second Video Title](https://www.loom.com/share/5b09e0be40d54200969658b077cb0f39)
-
-Check out [this video](https://drive.google.com/file/d/1knwVuEc7VO1yg0zCYqoOmwf3XyfuXC8-/view?usp=sharing), where I describe my project and some challenges I faced while building it.
+- [Building a Responsive Photo Sharing Platform: My Journey with Spots](https://drive.google.com/file/d/1-Wb2Ti-W-Rj-d6ZG2gDWdjBTMMYStZPp/view?usp=sharing)
