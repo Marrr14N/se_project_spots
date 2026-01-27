@@ -34,3 +34,7 @@ and some challenges I faced while building it:
 - [Second Video Title](https://www.loom.com/share/5b09e0be40d54200969658b077cb0f39)
 
 Check out [this video](https://drive.google.com/file/d/1knwVuEc7VO1yg0zCYqoOmwf3XyfuXC8-/view?usp=sharing), where I describe my project and some challenges I faced while building it.
+
+## Live Demo
+
+https://marrr14n.github.io/se_project_spots/
