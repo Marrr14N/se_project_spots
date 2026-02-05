@@ -25,7 +25,9 @@
   border-radius: 8px;
   border-style: none;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .card__image:hover {
@@ -47,9 +49,11 @@
   background-image: url(../images/like-icon.svg);
   background-repeat: no-repeat;
   background-position: center;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
   cursor: pointer;
-  opacity: 0.4;
+  opacity: 0.4s;
 }
 
 .card__like-btn:hover {
@@ -78,7 +82,9 @@
   background: transparent url(../images/delete.svg) no-repeat center / 22px 22px;
   cursor: pointer;
   opacity: 0.8;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
   z-index: 3;
 }
 
@@ -106,6 +112,9 @@
 
   .card__title {
     margin: 0;
-    font: 600 20px/1.2 "Poppins", system-ui, sans-serif;
+    font:
+      600 20px/1.2 "Poppins",
+      system-ui,
+      sans-serif;
   }
 }
