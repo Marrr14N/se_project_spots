@@ -129,31 +129,28 @@
 
 .modal__close-btn {
   position: absolute;
-  filter: invert(1);
-  color: #212121;
   top: 16px;
   right: 16px;
   width: 40px;
   height: 40px;
-  background-color: transparent;
-  background-image: url("../images/close-btn.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: transparent url("../images/close-btn.svg") center no-repeat;
   background-size: 30px 30px;
-  opacity: 40%;
+  opacity: 0.4;
+  filter: none;
   border: 0;
   padding: 0;
   cursor: pointer;
 }
 
 .modal__close-btn:hover {
-  color: #212121;
   opacity: 1;
 }
 
-.modal__close-btn_type_preview {
-  background: transparent url("../images/close-btn.svg") center no-repeat;
+.modal_type_preview .modal__close-btn {
+  background: transparent url("../images/white-close-btn.svg") center no-repeat;
+  right: -50px;
   top: 0;
+  opacity: 1;
 }
 
 .modal__title {
@@ -254,12 +251,16 @@
 }
 
 .modal__submit-btn:hover {
-  opacity: 0.8;
   cursor: pointer;
+  background-color: #212121;
+  opacity: 0.8;
 }
 
 .modal__submit-btn_disabled {
   pointer-events: none;
+  background-color: #212121;
+  color: #fcf5e5;
+  opacity: 0.5;
 }
 
 .modal__image-container {
