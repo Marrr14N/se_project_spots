@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo {
+  width: 94px;
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+@media screen and (max-width: 627px) {
+  .header {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}
